@@ -1,0 +1,23 @@
+
+search_cache
+logs
+*.log
+*.sh
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Claude Code local settings
+.claude/
+
+# Data directories (runtime generated)
+data/
+wiki_*/
+*_cache/
+search_results/
+
+# Environment files
+.env
+.env.*

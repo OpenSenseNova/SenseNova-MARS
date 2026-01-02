@@ -1,0 +1,59 @@
+{
+  "mmsearch_end2end_only_image": {
+    "root": "./data/eval/mmsearch_end2end_only_image",
+    "annotation": "./data/eval/mmsearch_end2end_only_image/data.jsonl",
+    "length": 171,
+    "repeat_time": 1,
+    "reward_fn": [],
+    "unused_reward_fn": [
+      "llm_score"
+    ],
+    "input_template": {
+      "name": "general",
+      "arguments": {
+        "system_prompt": "#Role\nYou are a step-by-step reasoning assistant. \nGiven a question, your task is to solve the problem **one substep at a time**.  \n\n## Guiding Principles  \nAt each turn, you must **either**:  \n1. Issue **one specific tool** enclosed in <tool_call> </tool_call> tags,  \n2. Or provide the **final answer** enclosed in <answer> </answer> tags.  \n\nAll outputs **must begin with a thought** enclosed in <thinking> </thinking> tags, explaining your current reasoning and what to do next.  \n\n## Output Format (strict):  \nAlways start with <thinking>. Do not output the previous reasoning chain. Then, depending on the case, output one of the following:\n\n1. If reasoning continues:  \n<thinking> Your current reasoning and next plan </thinking>  \n<tool_call> One precise, tool call to assist your reasoning </tool_call>\n\n2. If ready to conclude:  \n<thinking> Summarize all reasoning and derive the answer </thinking>  \n<answer> Final answer </answer>",
+        "format_instruction": "",
+        "add_image_path": false
+      }
+    },
+    "comment": "mmsearch_end2end_only_image"
+  },
+  "hr_mmsearch": {
+    "root": "./data/eval/hr_mmsearch",
+    "annotation": "./data/eval/hr_mmsearch/data.jsonl",
+    "length": 305,
+    "repeat_time": 1,
+    "reward_fn": [],
+    "unused_reward_fn": [
+      "llm_score"
+    ],
+    "input_template": {
+      "name": "general",
+      "arguments": {
+        "system_prompt": "#Role\nYou are a step-by-step reasoning assistant. \nGiven a question, your task is to solve the problem **one substep at a time**.  \n\n## Guiding Principles  \nAt each turn, you must **either**:  \n1. Issue **one specific tool** enclosed in <tool_call> </tool_call> tags,  \n2. Or provide the **final answer** enclosed in <answer> </answer> tags.  \n\nAll outputs **must begin with a thought** enclosed in <thinking> </thinking> tags, explaining your current reasoning and what to do next.  \n\n## Output Format (strict):  \nAlways start with <thinking>. Do not output the previous reasoning chain. Then, depending on the case, output one of the following:\n\n1. If reasoning continues:  \n<thinking> Your current reasoning and next plan </thinking>  \n<tool_call> One precise, tool call to assist your reasoning </tool_call>\n\n2. If ready to conclude:  \n<thinking> Summarize all reasoning and derive the answer </thinking>  \n<answer> Final answer </answer>",
+        "format_instruction": "",
+        "add_image_path": false
+      }
+    },
+    "comment": "hr_mmsearch"
+  },
+  "vstar_bench": {
+    "root": "./data/eval/vstar_bench",
+    "annotation": "./data/eval/vstar_bench/data.jsonl",
+    "length": 191,
+    "repeat_time": 1,
+    "reward_fn": [],
+    "unused_reward_fn": [
+      "em_score_mcq"
+    ],
+    "input_template": {
+      "name": "general",
+      "arguments": {
+        "system_prompt": "#Role\nYou are a step-by-step reasoning assistant. \nGiven a question, your task is to solve the problem **one substep at a time**.  \n\n## Guiding Principles  \nAt each turn, you must **either**:  \n1. Issue **one specific tool** enclosed in <tool_call> </tool_call> tags,  \n2. Or provide the **final answer** enclosed in <answer> </answer> tags.  \n\nAll outputs **must begin with a thought** enclosed in <thinking> </thinking> tags, explaining your current reasoning and what to do next.  \n\n## Output Format (strict):  \nAlways start with <thinking>. Do not output the previous reasoning chain. Then, depending on the case, output one of the following:\n\n1. If reasoning continues:  \n<thinking> Your current reasoning and next plan </thinking>  \n<tool_call> One precise, tool call to assist your reasoning </tool_call>\n\n2. If ready to conclude:  \n<thinking> Summarize all reasoning and derive the answer </thinking>  \n<answer> Final answer </answer>",
+        "format_instruction": "",
+        "add_image_path": false
+      }
+    },
+    "comment": "vstar_bench"
+  }
+}

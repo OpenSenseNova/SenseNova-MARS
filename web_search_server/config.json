@@ -1,0 +1,41 @@
+{
+  "search": {
+    "top_k": 5,
+    "cache_dir": "./search_cache",
+    "excluded_extensions": [
+      ".pdf", ".doc", ".docx", ".ppt", ".pptx",
+      ".xls", ".xlsx", ".jpg", ".jpeg", ".png", ".gif"
+    ]
+  },
+  "page_visit": {
+    "jina": {
+      "timeout": 30,
+      "max_retries": 3
+    }
+  },
+  "llm": {
+    "config_path": "./llm_config.json",
+    "max_completion_token": 8192,
+    "max_try_times": 5,
+    "content_limit": 30000
+  },
+  "rate_limits": {
+    "search_semaphore_limit": 100,
+    "page_semaphore_limit": 512,
+    "llm_semaphore_limit": 1024,
+    "serper_rate": 100,
+    "serper_capacity": 10
+  },
+  "infrastructure": {
+    "browser_pool": {
+      "pool_size": 64,
+      "max_retries": 3,
+      "browser_timeout": 15.0
+    },
+    "http": {
+      "total_timeout": 20.0,
+      "connect_timeout": 5.0,
+      "connection_pool_size": 200
+    }
+  }
+}

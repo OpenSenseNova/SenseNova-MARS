@@ -1,0 +1,54 @@
+{
+  "gpt-4o": {
+    "model_name": "gpt-4o-2024-11-20",
+    "api_key_var": "AZURE_OPENAI_API_KEY",
+    "azure_endpoint": "https://duomotai.openai.azure.com/",
+    "api_version": "2025-01-01-preview",
+    "provider": "azure"
+  },
+  "gpt-4o-mini": {
+    "model_name": "gpt-4o-mini-2024-07-18",
+    "api_key_var": "AZURE_OPENAI_API_KEY",
+    "azure_endpoint": "https://duomotai.openai.azure.com/",
+    "api_version": "2025-01-01-preview",
+    "provider": "azure"
+  },
+  "gpt-5-mini": {
+    "model_name": "gpt-5-mini",
+    "api_key_var": "AZURE_OPENAI_API_KEY",
+    "azure_endpoint": "https://duomotai.openai.azure.com/",
+    "api_version": "2025-04-01-preview",
+    "provider": "azure"
+  },
+  "gpt-5": {
+    "model_name": "gpt-5",
+    "api_key_var": "AZURE_OPENAI_API_KEY",
+    "azure_endpoint": "https://duomotai.openai.azure.com/",
+    "api_version": "2025-04-01-preview",
+    "provider": "azure"
+  },
+  "qwen3-32b": {
+    "model_name": "Qwen/Qwen3-32B",
+    "api_key_var": "SUMMARIZER_API_KEY",
+    "base_url_var": "SUMMARIZER_BASE_URL",
+    "provider": "openai"
+  },
+  "qwen3-30b-a3b-instruct-2507": {
+    "model_name": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "api_key_var": "SUMMARIZER_API_KEY",
+    "base_url_var": "SUMMARIZER_BASE_URL",
+    "provider": "openai"
+  },
+  "qwen3-8b": {
+    "model_name": "Qwen/Qwen3-8B",
+    "api_key_var": "SUMMARIZER_API_KEY",
+    "base_url_var": "SUMMARIZER_BASE_URL",
+    "provider": "openai"
+  },
+  "qwen3-next-80b-a3b-instruct": {
+    "model_name": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "api_key_var": "SUMMARIZER_API_KEY",
+    "base_url_var": "SUMMARIZER_BASE_URL",
+    "provider": "openai"
+  }
+}
