@@ -8,9 +8,6 @@
   <a href="http://arxiv.org/abs/2512.24330">
     <img src="https://img.shields.io/badge/ArXiv-SenseNova--MARS-brown?logo=arxiv" alt="Paper">
   </a>
-  <a href="https://huggingface.co/sensenova/SenseNova-MARS-8B">
-    <img src="https://img.shields.io/badge/🤗 huggingface-Model-purple" alt="checkpoint">
-  </a>
     <a href="https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data">
     <img src="https://img.shields.io/badge/🤗 huggingface-Dataset-blue" alt="dataset">
   </a>
@@ -21,7 +18,7 @@
 
 ## News
 * 2026.01: We release the training and inference code.
-* 2026.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-8B](https://huggingface.co/sensenova/SenseNova-MARS-8B), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
+* 2026.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
 
 ## Contents
 - [Introduction](#overview)
@@ -60,12 +57,6 @@ SenseNova-MARS can tackle the challenging visual task by leveraging an integrate
 | Datasets | HuggingFace | Google Drive |
 |----------|----------|----------|
 | SenseNova-MARS-Data | [🤗 link](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) | [ 📁 link](https://drive.google.com/drive/folders/1ClHduHWMaARbraNaaCnSE3DTKgJDDIiM?usp=sharing) |
-
-### Models
-
-| Model | HuggingFace |
-|----------|----------|
-| SenseNova-MARS-8B | [🤗 link](https://huggingface.co/sensenova/SenseNova-MARS-8B) |
 
 <!-- TODO: Update HuggingFace model link -->
 
