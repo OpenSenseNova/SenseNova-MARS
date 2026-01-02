@@ -9,16 +9,16 @@
     <img src="https://img.shields.io/badge/ArXiv-SenseNova--MARS-brown?logo=arxiv" alt="Paper">
   </a>
     <a href="https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data">
-    <img src="https://img.shields.io/badge/🤗 huggingface-Dataset-blue" alt="dataset">
+    <img src="https://img.shields.io/badge/🤗 huggingface-SenseNova--MARS--Dataset-blue" alt="dataset">
   </a>
     <a href="https://huggingface.co/datasets/sensenova/HR-MMSearch">
-    <img src="https://img.shields.io/badge/🤗 huggingface-Benchmark-blue" alt="dataset">
+    <img src="https://img.shields.io/badge/🤗 huggingface-HR--MMSearch--Benchmark-blue" alt="dataset">
   </a>
 </div>
 
 ## News
-* 2026.01: We release the training and inference code.
-* 2026.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
+* 2026.01.01: We release the training and inference code.
+* 2026.01.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [HR-MMSearch Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
 
 ## Contents
 - [Introduction](#overview)
@@ -278,7 +278,6 @@ python -m sglang.launch_server \
 ---
 
 ### Training
-
 #### Prerequisites
 
 Ensure all infrastructure services are running:
