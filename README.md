@@ -719,7 +719,7 @@ Before running training or evaluation, ensure you have:
       <td>-</td>
     </tr>
     <tr>
-      <td style="font-weight:bold;">SenseNova-MARS-8B</td>
+      <td>SenseNova-MARS-8B</td>
       <td>64.20</td>
       <td>67.84</td>
       <td>41.64</td>
@@ -729,7 +729,7 @@ Before running training or evaluation, ensure you have:
       <td>56.22</td>
       <td>84.67</td>
     </tr>
-    <tr">
+    <tr>
       <td style="font-weight:bold;">SenseNova-MARS-32B</td>
       <td style="font-weight:bold;">69.74</td>
       <td style="font-weight:bold;">74.27</td>
@@ -900,13 +900,13 @@ Before running training or evaluation, ensure you have:
       <td>67.9</td>
       <td>80.4</td>
     </tr>
-    <tr style="font-weight:bold;">
-      <td>SenseNova-MARS-32B</td>
-      <td>94.2</td>
-      <td>90.2</td>
-      <td>86.6</td>
-      <td>72.7</td>
-      <td>85.9</td>
+    <tr>
+      <td style="font-weight:bold;">SenseNova-MARS-32B</td>
+      <td style="font-weight:bold;">94.2</td>
+      <td style="font-weight:bold;">90.2</td>
+      <td style="font-weight:bold;">86.6</td>
+      <td style="font-weight:bold;">72.7</td>
+      <td style="font-weight:bold;">85.9</td>
     </tr>
   </tbody>
 </table>
