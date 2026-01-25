@@ -419,7 +419,7 @@ Before running training or evaluation, ensure you have:
   </thead>
   <tbody>
     <tr>
-      <td colspan="10" style="text-align:center; font-weight:bold; ">Direct Answer</td>
+      <td colspan="10" align="center"><i><b>Direct Answer</b></i></td>
     </tr>
     <tr>
       <td rowspan="4">Open-source</td>
@@ -545,7 +545,7 @@ Before running training or evaluation, ensure you have:
       <td>82.00</td>
     </tr>
     <tr>
-      <td colspan="10" style="text-align:center; font-weight:bold;">Agentic Model (zero-shot)</td>
+      <td colspan="10" align="center"><i><b>Agentic Model (zero-shot)</b></i></td>
     </tr>
     <tr>
       <td rowspan="4">Open-source</td>
@@ -671,7 +671,7 @@ Before running training or evaluation, ensure you have:
       <td>86.00</td>
     </tr>
     <tr>
-      <td colspan="10" style="text-align:center; font-weight:bold;">Agentic Model</td>
+      <td colspan="10" align="center"><i><b>Agentic Model</b></i></td>
     </tr>
     <tr>
       <td rowspan="6">Open-source</td>
@@ -759,7 +759,7 @@ Before running training or evaluation, ensure you have:
   </thead>
   <tbody>
     <tr>
-      <td colspan="6" style="text-align:center; font-weight:bold;">Direct Answer</td>
+      <td colspan="10" align="center"><i><b>Direct Answer</b></i></td>
     </tr>
     <tr>
       <td>Gemini-2.5-Pro</td>
@@ -810,7 +810,7 @@ Before running training or evaluation, ensure you have:
       <td>75.5</td>
     </tr>
     <tr>
-      <td colspan="6" style="text-align:center; font-weight:bold;">Agentic Model</td>
+      <td colspan="10" align="center"><i><b>Agentic Model</b></i></td>
     </tr>
     <tr>
       <td>SEAL</td>
