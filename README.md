@@ -31,17 +31,27 @@
 ## Overview
 
 While Vision-Language Models (VLMs) can solve complex tasks through agentic reasoning, their capabilities remain largely constrained to text-oriented chain-of-thought or isolated tool invocation. They fail
-to exhibit the human-like proficiency required to seamlessly interleave dynamic tool manipulation with continuous reasoning, particularly in knowledge-intensive and visually complex scenarios that demand coordinated external tools such as search and image cropping. In this work, we introduce SenseNova-MARS,
-a novel Multimodal Agentic Reasoning and Search framework that empowers VLMs with interleaved visual reasoning and tool-use capabilities via reinforcement learning (RL). Specifically, SenseNova-MARS dynamically integrates the image search, text search, and image crop tools to tackle fine-grained and knowledge-intensive visual understanding challenges. In the RL stage, we propose the Batch-Normalized
-Group Sequence Policy Optimization (BN-GSPO) algorithm to improve the training stability and advance the model’s ability to invoke tools and reason effectively. To comprehensively evaluate the agentic VLMs on complex visual tasks, we introduce the HR-MMSearch benchmark, the first search-oriented benchmark
-composed of high-resolution images with knowledge-intensive and search-driven questions. Experiments demonstrate that SenseNova-MARS achieves state-of-the-art performance on open-source search and fine-grained image understanding benchmarks. Specifically, on search-oriented benchmarks, SenseNovaMARS-8B scores 67.84 on MMSearch and 41.64 on HR-MMSearch, surpassing proprietary models such
-as Gemini-3-Flash and GPT-5. SenseNova-MARS represents a promising step toward agentic VLMs by providing effective and robust tool-use capabilities. To facilitate further research in this field, we have publicly released all code, models, and datasets.
+to exhibit the human-like proficiency required to seamlessly interleave dynamic tool manipulation with
+continuous reasoning, particularly in knowledge-intensive and visually complex scenarios that demand
+coordinated external tools such as search and image cropping. In this work, we introduce SenseNova-MARS,
+a novel Multimodal Agentic Reasoning and Search framework that empowers VLMs with interleaved
+visual reasoning and tool-use capabilities via reinforcement learning (RL). Specifically, SenseNova-MARS
+dynamically integrates the image search, text search, and image crop tools to tackle fine-grained and
+knowledge-intensive visual understanding challenges. In the RL stage, we propose the Batch-Normalized
+Group Sequence Policy Optimization (BN-GSPO) algorithm to improve the training stability and advance
+the model’s ability to invoke tools and reason effectively. To comprehensively evaluate the agentic VLMs
+on complex visual tasks, we introduce the HR-MMSearch benchmark, the first search-oriented benchmark
+composed of high-resolution images with knowledge-intensive and search-driven questions. Experiments
+demonstrate that SenseNova-MARS achieves state-of-the-art performance on open-source search and
+fine-grained image understanding benchmarks. Specifically, on search-oriented benchmarks, SenseNovaMARS-32B scores 74.3 on MMSearch and 54.4 on HR-MMSearch, surpassing proprietary models such
+as Gemini-3-Pro and GPT-5.2. SenseNova-MARS represents a promising step toward agentic VLMs by
+providing effective and robust tool-use capabilities.
 <p align="center">
     <img src="assets/overview.png" width="95%"/>
 <p>
 
 
-Overall performance of SenseNova-MARS-8B compares to other models across six benchmarks.
+Overall performance of SenseNova-MARS-32B compares to other models across six benchmarks. SenseNova-MARS-32B can surpass proprietary models such as Gemini-3-Pro and GPT-5.2 on the search-oriented benchmarks such as MMSearch and HR-MMSearch
 <p align="center">
     <img src="assets/performance.png" width="95%"/>
 <p>
@@ -409,10 +419,10 @@ Before running training or evaluation, ensure you have:
   </thead>
   <tbody>
     <tr>
-      <td colspan="10" align="center"><i><b>Direct Answer</b></i></td>
+      <td colspan="10" style="text-align:center; font-weight:bold; ">Direct Answer</td>
     </tr>
     <tr>
-      <td rowspan="3">Open-source</td>
+      <td rowspan="4">Open-source</td>
       <td>Qwen2.5-VL-7B-Instruct</td>
       <td>27.70</td>
       <td>7.60</td>
@@ -422,17 +432,6 @@ Before running training or evaluation, ensure you have:
       <td>47.88</td>
       <td>19.63</td>
       <td>60.00</td>
-    </tr>
-    <tr>
-      <td>Qwen2.5-VL-32B-Instruct</td>
-      <td>32.01</td>
-      <td>11.70</td>
-      <td>3.93</td>
-      <td>30.50</td>
-      <td>36.65</td>
-      <td>48.57</td>
-      <td>21.40</td>
-      <td>71.33</td>
     </tr>
     <tr>
       <td>Qwen3-VL-8B-Instruct</td>
@@ -446,7 +445,29 @@ Before running training or evaluation, ensure you have:
       <td>67.33</td>
     </tr>
     <tr>
-      <td rowspan="5">Proprietary</td>
+      <td>Qwen2.5-VL-32B-Instruct</td>
+      <td>32.01</td>
+      <td>11.70</td>
+      <td>3.93</td>
+      <td>30.50</td>
+      <td>36.65</td>
+      <td>48.57</td>
+      <td>21.40</td>
+      <td>71.33</td>
+    </tr>
+    <tr>
+      <td>Qwen3-VL-32B-Instruct</td>
+      <td>35.22</td>
+      <td>16.96</td>
+      <td>19.02</td>
+      <td>32.17</td>
+      <td>28.95</td>
+      <td>45.90</td>
+      <td>31.59</td>
+      <td>72.67</td>
+    </tr>
+    <tr>
+      <td rowspan="7">Proprietary</td>
       <td>GPT-4o-mini</td>
       <td>33.08</td>
       <td>15.79</td>
@@ -485,10 +506,21 @@ Before running training or evaluation, ensure you have:
       <td>35.09</td>
       <td>22.62</td>
       <td>54.39</td>
-      <td>61.70</td>
       <td>54.15</td>
+      <td>61.70</td>
       <td>44.39</td>
       <td>79.33</td>
+    </tr>
+    <tr>
+      <td>GPT-5.2</td>
+      <td>50.92</td>
+      <td>43.27</td>
+      <td>24.92</td>
+      <td>50.94</td>
+      <td>50.40</td>
+      <td>59.92</td>
+      <td>47.00</td>
+      <td>80.00</td>
     </tr>
     <tr>
       <td>Gemini-3-Flash</td>
@@ -496,16 +528,27 @@ Before running training or evaluation, ensure you have:
       <td>57.31</td>
       <td>21.97</td>
       <td>56.50</td>
-      <td>63.57</td>
       <td>54.85</td>
+      <td>63.57</td>
       <td>38.90</td>
       <td>82.67</td>
     </tr>
     <tr>
-      <td colspan="10" align="center"><i><b>Agentic Model (zero-shot)</b></i></td>
+      <td>Gemini-3-Pro</td>
+      <td>55.87</td>
+      <td>62.57</td>
+      <td>26.89</td>
+      <td>59.22</td>
+      <td>56.30</td>
+      <td>64.07</td>
+      <td>40.06</td>
+      <td>82.00</td>
     </tr>
     <tr>
-      <td rowspan="3">Open-source</td>
+      <td colspan="10" style="text-align:center; font-weight:bold;">Agentic Model (zero-shot)</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Open-source</td>
       <td>Qwen2.5-VL-7B-Instruct</td>
       <td>35.50</td>
       <td>32.16</td>
@@ -515,17 +558,6 @@ Before running training or evaluation, ensure you have:
       <td>42.35</td>
       <td>22.52</td>
       <td>67.33</td>
-    </tr>
-    <tr>
-      <td>Qwen2.5-VL-32B-Instruct</td>
-      <td>53.45</td>
-      <td>49.71</td>
-      <td>33.44</td>
-      <td>52.22</td>
-      <td>50.10</td>
-      <td>65.15</td>
-      <td>42.17</td>
-      <td>81.33</td>
     </tr>
     <tr>
       <td>Qwen3-VL-8B-Instruct</td>
@@ -539,7 +571,29 @@ Before running training or evaluation, ensure you have:
       <td>84.00</td>
     </tr>
     <tr>
-      <td rowspan="5">Proprietary</td>
+      <td>Qwen2.5-VL-32B-Instruct</td>
+      <td>53.45</td>
+      <td>49.71</td>
+      <td>33.44</td>
+      <td>52.22</td>
+      <td>50.10</td>
+      <td>65.15</td>
+      <td>42.17</td>
+      <td>81.33</td>
+    </tr>
+    <tr>
+      <td>Qwen3-VL-32B-Instruct</td>
+      <td>53.82</td>
+      <td>49.12</td>
+      <td>34.43</td>
+      <td>54.28</td>
+      <td>49.85</td>
+      <td>64.17</td>
+      <td>42.87</td>
+      <td>82.00</td>
+    </tr>
+    <tr>
+      <td rowspan="7">Proprietary</td>
       <td>GPT-4o-mini</td>
       <td>45.65</td>
       <td>38.60</td>
@@ -549,17 +603,6 @@ Before running training or evaluation, ensure you have:
       <td>50.84</td>
       <td>31.54</td>
       <td>80.00</td>
-    </tr>
-    <tr>
-      <td>Gemini-2.5-Flash</td>
-      <td>58.05</td>
-      <td>59.06</td>
-      <td>40.00</td>
-      <td>61.72</td>
-      <td>53.70</td>
-      <td>68.81</td>
-      <td>47.75</td>
-      <td>75.33</td>
     </tr>
     <tr>
       <td>GPT-4o</td>
@@ -573,13 +616,24 @@ Before running training or evaluation, ensure you have:
       <td>76.67</td>
     </tr>
     <tr>
+      <td>Gemini-2.5-Flash</td>
+      <td>58.05</td>
+      <td>59.06</td>
+      <td>40.00</td>
+      <td>61.72</td>
+      <td>53.70</td>
+      <td>68.81</td>
+      <td>47.75</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
       <td>GPT-5</td>
       <td>60.12</td>
       <td>52.63</td>
       <td>38.36</td>
       <td>62.61</td>
-      <td>70.58</td>
       <td>55.95</td>
+      <td>70.58</td>
       <td>56.02</td>
       <td>84.67</td>
     </tr>
@@ -589,16 +643,38 @@ Before running training or evaluation, ensure you have:
       <td>62.57</td>
       <td>41.64</td>
       <td>64.89</td>
-      <td>67.92</td>
       <td>61.10</td>
+      <td>67.92</td>
       <td>48.06</td>
       <td>82.67</td>
     </tr>
     <tr>
-      <td colspan="10" align="center"><i><b>Agentic Model</b></i></td>
+      <td>GPT-5.2</td>
+      <td>67.64</td>
+      <td>66.08</td>
+      <td>48.20</td>
+      <td>68.78</td>
+      <td>65.55</td>
+      <td>78.18</td>
+      <td>65.99</td>
+      <td>80.67</td>
     </tr>
     <tr>
-      <td rowspan="5">Open-source</td>
+      <td>Gemini-3-Pro</td>
+      <td>69.06</td>
+      <td>74.27</td>
+      <td>48.52</td>
+      <td>72.61</td>
+      <td>66.45</td>
+      <td>75.91</td>
+      <td>59.69</td>
+      <td>86.00</td>
+    </tr>
+    <tr>
+      <td colspan="10" style="text-align:center; font-weight:bold;">Agentic Model</td>
+    </tr>
+    <tr>
+      <td rowspan="6">Open-source</td>
       <td>Visual-ARFT</td>
       <td>40.13</td>
       <td>34.50</td>
@@ -632,7 +708,7 @@ Before running training or evaluation, ensure you have:
       <td>74.00</td>
     </tr>
     <tr>
-      <td>DeepEyeV2</td>
+      <td>DeepEyesV2</td>
       <td>-</td>
       <td>63.70</td>
       <td>-</td>
@@ -643,15 +719,26 @@ Before running training or evaluation, ensure you have:
       <td>-</td>
     </tr>
     <tr>
-      <td><b>SenseNova-MARS-8B</b></td>
-      <td><b>64.20</b></td>
-      <td><b>67.84</b></td>
-      <td><b>41.64</b></td>
-      <td><b>67.11</b></td>
-      <td><b>70.19</b></td>
-      <td><b>61.70</b></td>
-      <td><b>56.22</b></td>
-      <td><b>84.67</b></td>
+      <td style="font-weight:bold;">SenseNova-MARS-8B</td>
+      <td>64.20</td>
+      <td>67.84</td>
+      <td>41.64</td>
+      <td>67.11</td>
+      <td>61.70</td>
+      <td>70.19</td>
+      <td>56.22</td>
+      <td>84.67</td>
+    </tr>
+    <tr">
+      <td style="font-weight:bold;">SenseNova-MARS-32B</td>
+      <td style="font-weight:bold;">69.74</td>
+      <td style="font-weight:bold;">74.27</td>
+      <td style="font-weight:bold;">54.43</td>
+      <td style="font-weight:bold;">72.61</td>
+      <td style="font-weight:bold;">65.25</td>
+      <td style="font-weight:bold;">74.14</td>
+      <td style="font-weight:bold;">60.83</td>
+      <td style="font-weight:bold;">86.67</td>
     </tr>
   </tbody>
 </table>
@@ -672,114 +759,154 @@ Before running training or evaluation, ensure you have:
   </thead>
   <tbody>
     <tr>
-      <td colspan="6" align="center"><i><b>Direct Answer</b></i></td>
+      <td colspan="6" style="text-align:center; font-weight:bold;">Direct Answer</td>
+    </tr>
+    <tr>
+      <td>Gemini-2.5-Pro</td>
+      <td>83.8</td>
+      <td>87.3</td>
+      <td>85.4</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>GPT-4o</td>
-      <td align="center">67.5</td>
-      <td align="center">65.0</td>
-      <td align="center">59.6</td>
-      <td align="center">62.8</td>
-      <td align="center">63.7</td>
+      <td>67.5</td>
+      <td>65.0</td>
+      <td>59.6</td>
+      <td>62.8</td>
+      <td>63.7</td>
     </tr>
     <tr>
       <td>LLaVA-onevison</td>
-      <td align="center">75.4</td>
-      <td align="center">63.0</td>
-      <td align="center">59.8</td>
-      <td align="center">57.4</td>
-      <td align="center">63.9</td>
+      <td>75.4</td>
+      <td>63.0</td>
+      <td>59.8</td>
+      <td>57.4</td>
+      <td>63.9</td>
     </tr>
     <tr>
       <td>Qwen2.5-VL-7B-Instruct</td>
-      <td align="center">75.3</td>
-      <td align="center">65.5</td>
-      <td align="center">62.1</td>
-      <td align="center">56.8</td>
-      <td align="center">64.9</td>
+      <td>75.3</td>
+      <td>65.5</td>
+      <td>62.1</td>
+      <td>56.8</td>
+      <td>64.9</td>
     </tr>
     <tr>
       <td>Qwen2.5-VL-32B-Instruct</td>
-      <td align="center">80.6</td>
-      <td align="center">69.3</td>
-      <td align="center">63.6</td>
-      <td align="center">59.1</td>
-      <td align="center">68.2</td>
+      <td>80.6</td>
+      <td>69.3</td>
+      <td>63.6</td>
+      <td>59.1</td>
+      <td>68.2</td>
     </tr>
     <tr>
       <td>Qwen3-VL-8B-Instruct</td>
-      <td align="center">86.4</td>
-      <td align="center">78.9</td>
-      <td align="center">74.6</td>
-      <td align="center">61.9</td>
-      <td align="center">75.5</td>
+      <td>86.4</td>
+      <td>78.9</td>
+      <td>74.6</td>
+      <td>61.9</td>
+      <td>75.5</td>
     </tr>
     <tr>
-      <td colspan="6" align="center"><i><b>Agentic Model</b></i></td>
+      <td colspan="6" style="text-align:center; font-weight:bold;">Agentic Model</td>
     </tr>
     <tr>
       <td>SEAL</td>
-      <td align="center">74.8</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
+      <td>74.8</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Qwen3-VL-32B-Instruct</td>
+      <td>91.1</td>
+      <td>84.6</td>
+      <td>81.6</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Qwen3-VL-235B-A22B-Instruct</td>
+      <td>93.7</td>
+      <td>85.4</td>
+      <td>82.4</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>Monet</td>
-      <td align="center">83.3</td>
-      <td align="center">71.0</td>
-      <td align="center">68.0</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
+      <td>83.3</td>
+      <td>71.0</td>
+      <td>68.0</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>Pixel-Reasoner</td>
-      <td align="center">84.3</td>
-      <td align="center">72.6</td>
-      <td align="center">66.1</td>
-      <td align="center">64.4</td>
-      <td align="center">71.9</td>
+      <td>84.3</td>
+      <td>72.6</td>
+      <td>66.1</td>
+      <td>64.4</td>
+      <td>71.9</td>
     </tr>
     <tr>
       <td>DeepEyes</td>
-      <td align="center">83.3</td>
-      <td align="center">73.2</td>
-      <td align="center">69.5</td>
-      <td align="center">64.1</td>
-      <td align="center">72.5</td>
+      <td>83.3</td>
+      <td>73.2</td>
+      <td>69.5</td>
+      <td>64.1</td>
+      <td>72.5</td>
     </tr>
     <tr>
       <td>Thyme</td>
-      <td align="center">82.2</td>
-      <td align="center">77.0</td>
-      <td align="center">72.0</td>
-      <td align="center">64.8</td>
-      <td align="center">74.0</td>
+      <td>82.2</td>
+      <td>77.0</td>
+      <td>72.0</td>
+      <td>64.8</td>
+      <td>74.0</td>
     </tr>
     <tr>
       <td>DeepEyesV2</td>
-      <td align="center">81.8</td>
-      <td align="center">77.9</td>
-      <td align="center">73.8</td>
-      <td align="center">64.9</td>
-      <td align="center">74.6</td>
+      <td>81.8</td>
+      <td>77.9</td>
+      <td>73.8</td>
+      <td>64.9</td>
+      <td>74.6</td>
     </tr>
     <tr>
       <td>Mini-o3</td>
-      <td align="center">88.2</td>
-      <td align="center">77.5</td>
-      <td align="center">73.3</td>
-      <td align="center">65.5</td>
-      <td align="center">76.1</td>
+      <td>88.2</td>
+      <td>77.5</td>
+      <td>73.3</td>
+      <td>65.5</td>
+      <td>76.1</td>
     </tr>
     <tr>
-      <td><b>SenseNova-MARS-8B</b></td>
-      <td align="center"><b>92.2</b></td>
-      <td align="center"><b>83.1</b></td>
-      <td align="center"><b>78.4</b></td>
-      <td align="center"><b>67.9</b></td>
-      <td align="center"><b>80.4</b></td>
+      <td>Skywork-R1V4</td>
+      <td>88.0</td>
+      <td>82.8</td>
+      <td>79.8</td>
+      <td>71.4</td>
+      <td>80.5</td>
+    </tr>
+    <tr>
+      <td>SenseNova-MARS-8B</td>
+      <td>92.2</td>
+      <td>83.1</td>
+      <td>78.4</td>
+      <td>67.9</td>
+      <td>80.4</td>
+    </tr>
+    <tr style="font-weight:bold;">
+      <td>SenseNova-MARS-32B</td>
+      <td>94.2</td>
+      <td>90.2</td>
+      <td>86.6</td>
+      <td>72.7</td>
+      <td>85.9</td>
     </tr>
   </tbody>
 </table>
