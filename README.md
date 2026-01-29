@@ -7,10 +7,6 @@
 <div align="center">
   <a href="http://arxiv.org/abs/2512.24330">
     <img src="https://img.shields.io/badge/ArXiv-SenseNova--MARS-brown?logo=arxiv" alt="Paper">
-  <!-- </a>
-    <a href="https://huggingface.co/sensenova/SenseNova-MARS-8B">
-    <img src="https://img.shields.io/badge/🤗 huggingface-SenseNova--MARS--8B-blue" alt="dataset">
-  </a> -->
   </a>
     <a href="https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data">
     <img src="https://img.shields.io/badge/🤗 huggingface-SenseNova--MARS--Dataset-blue" alt="dataset">
@@ -18,10 +14,17 @@
     <a href="https://huggingface.co/datasets/sensenova/HR-MMSearch">
     <img src="https://img.shields.io/badge/🤗 huggingface-HR--MMSearch--Benchmark-blue" alt="dataset">
   </a>
+    </a>
+  <a href="https://huggingface.co/sensenova/SenseNova-MARS-8B">
+    <img src="https://img.shields.io/badge/🤗 huggingface-SenseNova--MARS--8B-purple" alt="checkpoint">
+  </a>
+  <a href="https://huggingface.co/sensenova/SenseNova-MARS-32B">
+    <img src="https://img.shields.io/badge/🤗 huggingface-SenseNova--MARS--32B-purple" alt="checkpoint">
+  </a>
 </div>
 
 ## News
-<!-- * 2026.01.26: We release the lightweight model [SenseNova-MARS-8B](https://huggingface.co/sensenova/SenseNova-MARS-8B). -->
+* 2026.01.29: We release the model [SenseNova-MARS-8B](https://huggingface.co/sensenova/SenseNova-MARS-8B) and [SenseNova-MARS-32B](https://huggingface.co/sensenova/SenseNova-MARS-32B).
 * 2026.01.25: We introduce SenseNova-MARS-32B, a pro variant of the SenseNova-MARS series.
 * 2026.01.01: We release the training and inference code.
 * 2026.01.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [HR-MMSearch Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
