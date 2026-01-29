@@ -76,6 +76,7 @@ SenseNova-MARS can tackle the challenging visual task by leveraging an integrate
 | Model | HuggingFace |
 |----------|----------|
 | SenseNova-MARS-8B | [🤗 link](https://huggingface.co/sensenova/SenseNova-MARS-8B)| 
+| SenseNova-MARS-32B | [🤗 link](https://huggingface.co/sensenova/SenseNova-MARS-32B)| 
 
 
 ### Datasets
