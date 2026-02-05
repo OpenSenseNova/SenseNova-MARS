@@ -1,0 +1,4 @@
+eval_*/
+*.db
+*.json
+.claude

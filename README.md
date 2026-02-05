@@ -24,6 +24,7 @@
 </div>
 
 ## News
+* 2026.02.05: We release a [prebuilt Docker image](https://hub.docker.com/r/yxchng/sensenova-mars) and a lightweight [standalone inference code](inference/README.md) (without web_search_server and verl dependencies).
 * 2026.01.29: We release the model [SenseNova-MARS-8B](https://huggingface.co/sensenova/SenseNova-MARS-8B) and [SenseNova-MARS-32B](https://huggingface.co/sensenova/SenseNova-MARS-32B).
 * 2026.01.01: We release the training and inference code.
 * 2026.01.01: We release the [Paper](http://arxiv.org/abs/2512.24330), [SenseNova-MARS-Data](https://huggingface.co/datasets/sensenova/SenseNova-MARS-Data) and [HR-MMSearch Benchmark](https://huggingface.co/datasets/sensenova/HR-MMSearch).
@@ -147,20 +148,30 @@ SenseNova-MARS/
 └── README.md
 ```
 
-#### Step 2: Build Docker Environment
+#### Step 2: Build and Run Docker Environment
 
-Build the Docker image:
+**Option A: Use prebuilt Docker image (Recommended)**
+
+```bash
+docker pull yxchng/sensenova-mars:v0.1
+
+docker run -it --gpus all --shm-size=64g \
+    -v /path/to/SenseNova-MARS:/workspace/SenseNova-MARS \
+    -p 8000:8000 -p 8001:8001 -p 8123:8123 -p 8181:8181 -p 8265:8265 \
+    yxchng/sensenova-mars:v0.1
+
+# Inside container, navigate to the project directory
+cd /workspace/SenseNova-MARS
+```
+
+**Option B: Build from source**
 
 ```bash
 docker build -t verl-mars:latest .
 
 # If in China, use mirrors for faster download:
 docker build --build-arg USE_MIRROR=true -t verl-mars:latest .
-```
 
-#### Step 3: Run Docker Container
-
-```bash
 docker run -it --gpus all --shm-size=64g \
     -v /path/to/SenseNova-MARS:/workspace/SenseNova-MARS \
     -p 8000:8000 -p 8001:8001 -p 8123:8123 -p 8181:8181 -p 8265:8265 \
@@ -952,4 +963,6 @@ We would like to thank the following projects for their contributions to the dev
 
 <!-- TODO: Update citation with complete author list -->
 
+## Star History
 
+[![Star History Chart](https://api.star-history.com/svg?repos=OpenSenseNova/SenseNova-MARS&type=date)](https://star-history.com/#OpenSenseNova/SenseNova-MARS&Date)
