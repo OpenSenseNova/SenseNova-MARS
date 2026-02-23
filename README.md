@@ -24,6 +24,7 @@
 </div>
 
 ## News
+* 2026.02.23: We are excited to announce that our paper has been accepted to CVPR 2026! 🎉
 * 2026.02.05: We release a [prebuilt Docker image](https://hub.docker.com/r/yxchng/sensenova-mars) and a lightweight [standalone inference code](inference/README.md) (without web_search_server and verl dependencies).
 * 2026.01.29: We release the model [SenseNova-MARS-8B](https://huggingface.co/sensenova/SenseNova-MARS-8B) and [SenseNova-MARS-32B](https://huggingface.co/sensenova/SenseNova-MARS-32B).
 * 2026.01.01: We release the training and inference code.
